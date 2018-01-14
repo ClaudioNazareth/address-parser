@@ -1,6 +1,7 @@
 # Address Parser
 
 [![Build Status](https://travis-ci.org/ClaudioNazareth/address-parser.svg?branch=master)](https://travis-ci.org/ClaudioNazareth/address-parser)
+[![codecov](https://codecov.io/gh/ClaudioNazareth/address-parser/branch/master/graph/badge.svg)](https://codecov.io/gh/ClaudioNazareth/address-parser)
 
 An address provider returns addresses only with concatenated street
 names and numbers. Our own system on the other hand has separate
