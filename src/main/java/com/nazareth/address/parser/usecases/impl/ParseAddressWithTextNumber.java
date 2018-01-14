@@ -5,7 +5,9 @@ import static com.nazareth.address.parser.utils.AddressRegexUtils.INTERNATIONAL_
 import java.util.Arrays;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
 
+@Service
 public class ParseAddressWithTextNumber extends AbstractAddressParser {
 
   public ParseAddressWithTextNumber() {
