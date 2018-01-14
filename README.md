@@ -73,9 +73,9 @@ To **see and test** the APIs go to path **/swagger-ui.html** (ex: _http://localh
 
 
 
-APIs - Swagger
+Clean Architecture and Clean Code
 ==============
-
+----------------------------------------------------------------------------------------------------
 #### Clean Code
 
 Clean Code is a development style that focuses on the **ease of writing, reading and maintaining code**.
@@ -97,6 +97,8 @@ For this project I've used some clean code principles like :
     Thus, it is common for a comment to cease to have meaning, or worse, to pass on a false meaning after some time_.    
 
 #### Clean Architecture
+
+For this application I choose to use **Clean Architecture**
 
 The Clean Architecture leverages well-known and not so well-known concepts, rules, and patterns, 
 explaining how to fit them together, to propose a standardised way of building applications.
