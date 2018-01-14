@@ -14,6 +14,12 @@ public class AddressRequest implements Serializable {
   @ApiModelProperty(value = "The address to be parsed", required = true)
   private String address;
 
+  public AddressRequest(String address) {
+    this.address = address;
+  }
+
+  public AddressRequest() {}
+
   public String getAddress() {
     return address;
   }

@@ -1,10 +1,16 @@
 # Address Parser
 
+Click the badges below to see build and coverage information
+
 [![Build Status](https://travis-ci.org/ClaudioNazareth/address-parser.svg?branch=master)](https://travis-ci.org/ClaudioNazareth/address-parser)
 [![codecov](https://codecov.io/gh/ClaudioNazareth/address-parser/branch/master/graph/badge.svg)](https://codecov.io/gh/ClaudioNazareth/address-parser)
 
+
 ![javaversion](https://img.shields.io/badge/Java-8-yellowgreen.svg)
 ![springboot](https://img.shields.io/badge/spring%20boot-1.5.9.RELEASE-orange.svg)
+![server](https://img.shields.io/badge/server-undertow-yellow.svg)
+![swagger](https://img.shields.io/badge/swagger-2.7.0-green.svg)
+![googleformater](https://img.shields.io/badge/google%20format-1.5-blue.svg)
 
 
 Scenario for this application:
@@ -34,7 +40,6 @@ cases, e.g.**
   
 Instructions
 ============
-----------------------------------------------------------------------------------------------------
   
 To compile and run this project you will need:
 
@@ -48,6 +53,7 @@ To start the application use the command bellow
 mvn spring-boot:run
 ```
 **The base path for the endpoins is**: /v1
+  -For this application we have:  **/v1/address-parser/parse** 
 
 **Application port** :8080  
 
@@ -58,10 +64,15 @@ mvn test
 ```  
 
 
+Formatter
+==============
+The code was formatted using [Google Format](https://github.com/google/google-java-format)
+
+
 APIs - Swagger
 ==============
-----------------------------------------------------------------------------------------------------
-To document the APIs I have used Swagger.
+
+To document the APIs I used Swagger.
 
 Swagger is the world’s largest framework of API developer tools for the OpenAPI Specification(OAS),
 enabling development across the entire API lifecycle, from design and documentation, 
@@ -75,7 +86,7 @@ To **see and test** the APIs go to path **/swagger-ui.html** (ex: _http://localh
 
 Clean Architecture and Clean Code
 ==============
-----------------------------------------------------------------------------------------------------
+
 #### Clean Code
 
 Clean Code is a development style that focuses on the **ease of writing, reading and maintaining code**.
