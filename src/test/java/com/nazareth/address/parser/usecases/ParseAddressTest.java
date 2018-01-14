@@ -1,5 +1,14 @@
 package com.nazareth.address.parser.usecases;
 
+import static com.nazareth.address.parser.fixtures.AddressFixture.AM_BACHLE_ADDRESS;
+import static com.nazareth.address.parser.fixtures.AddressFixture.AUF_DER_VOGELWIESE_ADDRESS;
+import static com.nazareth.address.parser.fixtures.AddressFixture.BLAUFELDWEG_ADDRESS;
+import static com.nazareth.address.parser.fixtures.AddressFixture.BROADWAY_AV_ADDRESS;
+import static com.nazareth.address.parser.fixtures.AddressFixture.CALLE_39_ADDRESS;
+import static com.nazareth.address.parser.fixtures.AddressFixture.CALLE_ADUANNA;
+import static com.nazareth.address.parser.fixtures.AddressFixture.MUSTERSTRASSE_ADDRESS;
+import static com.nazareth.address.parser.fixtures.AddressFixture.RUE_DE_LA_REVOLUTION_ADDRESS;
+import static com.nazareth.address.parser.fixtures.AddressFixture.WINTERALLEE_ADDRESS;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.ThrowableAssert.catchThrowable;
 import static org.mockito.Mockito.when;
@@ -36,15 +45,15 @@ public class ParseAddressTest {
 
     when(applicationContext.getBean(ParseGermanAddress.class)).thenReturn(new ParseGermanAddress());
 
-    String adress = "Winterallee 3";
+    String adress = WINTERALLEE_ADDRESS;
     String[] adressParsed = parseAddress.execute(adress);
     assertThat(adressParsed).hasSize(2).containsExactly("Winterallee", "3");
 
-    adress = "Musterstrasse 45";
+    adress = MUSTERSTRASSE_ADDRESS;
     adressParsed = parseAddress.execute(adress);
     assertThat(adressParsed).hasSize(2).containsExactly("Musterstrasse", "45");
 
-    adress = "Blaufeldweg 123B";
+    adress = BLAUFELDWEG_ADDRESS;
     adressParsed = parseAddress.execute(adress);
     assertThat(adressParsed).hasSize(2).containsExactly("Blaufeldweg", "123B");
   }
@@ -54,11 +63,11 @@ public class ParseAddressTest {
 
     when(applicationContext.getBean(ParseGermanAddress.class)).thenReturn(new ParseGermanAddress());
 
-    String adress = "Am Bächle 23";
+    String adress = AM_BACHLE_ADDRESS;
     String[] adressParsed = parseAddress.execute(adress);
     assertThat(adressParsed).hasSize(2).containsExactly("Am Bächle", "23");
 
-    adress = "Auf der Vogelwiese 23 b";
+    adress = AUF_DER_VOGELWIESE_ADDRESS;
     adressParsed = parseAddress.execute(adress);
     assertThat(adressParsed).hasSize(2).containsExactly("Auf der Vogelwiese", "23 b");
   }
@@ -69,24 +78,24 @@ public class ParseAddressTest {
     when(applicationContext.getBean(ParseInternationalAddress.class))
         .thenReturn(new ParseInternationalAddress());
 
-    String adress = "4, rue de la revolution";
+    String adress = RUE_DE_LA_REVOLUTION_ADDRESS;
     String[] adressParsed = parseAddress.execute(adress);
     assertThat(adressParsed).hasSize(2).containsExactly("rue de la revolution", "4");
 
-    adress = "200 Broadway Av";
+    adress = BROADWAY_AV_ADDRESS;
     adressParsed = parseAddress.execute(adress);
     assertThat(adressParsed).hasSize(2).containsExactly("Broadway Av", "200");
 
     when(applicationContext.getBean(ParseGermanAddress.class)).thenReturn(new ParseGermanAddress());
 
-    adress = "Calle Aduana, 29";
+    adress = CALLE_ADUANNA;
     adressParsed = parseAddress.execute(adress);
     assertThat(adressParsed).hasSize(2).containsExactly("Calle Aduana", "29");
 
     when(applicationContext.getBean(ParseAddressWithTextNumber.class))
         .thenReturn(new ParseAddressWithTextNumber());
 
-    adress = "Calle 39 No 1540";
+    adress = CALLE_39_ADDRESS;
     adressParsed = parseAddress.execute(adress);
     assertThat(adressParsed).hasSize(2).containsExactly("Calle 39", "No 1540");
   }
